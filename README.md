@@ -8,7 +8,7 @@ API REST Node.js avec Express 5, Mongoose et MongoDB. Les échanges se font en J
 npm install
 ```
 
-Copiez `.env.example` vers `.env`, puis adaptez `MONGODB_URI` à votre instance MongoDB.
+Adaptez `MONGODB_URI` à votre instance MongoDB via votre `.env`
 
 ```bash
 npm run dev
