@@ -25,7 +25,7 @@ L'API écoute par défaut sur `http://localhost:3000`. Le contrôle de santé es
 | POST    | `/api/products`     | Ajouter un produit        | `201 Created`                |
 | PUT     | `/api/products/:id` | Remplacer tous les champs | `200 OK`                     |
 | PATCH   | `/api/products/:id` | Modifier certains champs  | `200 OK`                     |
-| DELETE  | `/api/products/:id` | Supprimer un produit      | `200 OK`                     |
+| DELETE  | `/api/products/:id` | Supprimer un produit      | `204 No Content`             |
 
 Exemple de corps JSON :
 
@@ -37,5 +37,3 @@ Exemple de corps JSON :
   "category": "Informatique"
 }
 ```
-
-Les réponses de succès contenant une ressource utilisent la forme `{ "data": ... }`. Les erreurs utilisent `{ "error": { "message": "..." } }`.

@@ -52,7 +52,8 @@ test("crée, consulte, liste, modifie partiellement, remplace et supprime un pro
   await request(app).put(`/api/products/${id}`).send(replacement).expect(200);
   assert.equal((await Product.findById(id)).name, replacement.name);
 
-  await request(app).delete(`/api/products/${id}`).expect(200);
+  const deleted = await request(app).delete(`/api/products/${id}`).expect(204);
+  assert.equal(deleted.text, "");
   await request(app).get(`/api/products/${id}`).expect(404);
 });
 
