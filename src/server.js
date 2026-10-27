@@ -1,12 +1,14 @@
 require("dotenv").config();
 
 const app = require("./app");
+const { validateAuthConfig } = require("./config/auth");
 const connectDatabase = require("./config/database");
 
 const port = Number(process.env.PORT) || 3000;
 
 async function startServer() {
   try {
+    validateAuthConfig();
     await connectDatabase();
     app.listen(port, () => {
       console.log(`API disponible sur http://localhost:${port}`);
